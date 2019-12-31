@@ -100,3 +100,6 @@ C:\Users\1028260\Desktop\Shopify\ShopifyApp\obj\Debug\ShopifyApp.csproj.CoreComp
 C:\Users\1028260\Desktop\Shopify\ShopifyApp\obj\Debug\ShopifyApp.csproj.CopyComplete
 C:\Users\1028260\Desktop\Shopify\ShopifyApp\obj\Debug\ShopifyApp.exe
 C:\Users\1028260\Desktop\Shopify\ShopifyApp\obj\Debug\ShopifyApp.pdb
+C:\Users\1028260\Desktop\Shopify\ShopifyApp\obj\Debug\ShopifyApp.Cashier.BillForm.resources
+C:\Users\1028260\Desktop\Shopify\ShopifyApp\obj\Debug\ShopifyApp.Cashier.CashierMenu.resources
+C:\Users\1028260\Desktop\Shopify\ShopifyApp\obj\Debug\ShopifyApp.Cashier.SalesBilling.resources

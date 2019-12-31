@@ -44,7 +44,6 @@ C:\Users\1028260\Desktop\Shopify\ShopifyDTO\bin\Debug\System.Data.SqlClient.xml
 C:\Users\1028260\Desktop\Shopify\ShopifyDTO\bin\Debug\System.Security.AccessControl.xml
 C:\Users\1028260\Desktop\Shopify\ShopifyDTO\bin\Debug\System.Security.Permissions.xml
 C:\Users\1028260\Desktop\Shopify\ShopifyDTO\bin\Debug\System.Security.Principal.Windows.xml
-C:\Users\1028260\Desktop\Shopify\ShopifyDTO\obj\Debug\ShopifyDTO.csprojAssemblyReference.cache
 C:\Users\1028260\Desktop\Shopify\ShopifyDTO\obj\Debug\ShopifyDTO.csproj.CoreCompileInputs.cache
 C:\Users\1028260\Desktop\Shopify\ShopifyDTO\obj\Debug\ShopifyDTO.csproj.CopyComplete
 C:\Users\1028260\Desktop\Shopify\ShopifyDTO\obj\Debug\ShopifyDTO.dll
