@@ -144,6 +144,30 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StockItemsDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="User\Forgot Password.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\Forgot Password.designer.cs">
+      <DependentUpon>Forgot Password.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\RegistrationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\RegistrationForm.designer.cs">
+      <DependentUpon>RegistrationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Welcome\WelcomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Welcome\WelcomeForm.Designer.cs">
+      <DependentUpon>WelcomeForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Cashier\BillForm.resx">
       <DependentUpon>BillForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,6 +199,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Stock Managment\ViewStock.resx">
       <DependentUpon>ViewStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\Forgot Password.resx">
+      <DependentUpon>Forgot Password.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\RegistrationForm.resx">
+      <DependentUpon>RegistrationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Welcome\WelcomeForm.resx">
+      <DependentUpon>WelcomeForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -247,6 +283,29 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\finalpicc.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\21221076.jpg" />
+    <Content Include="Resources\2208607_stock-photo-vector-blue-waves-background.jpg" />
+    <Content Include="Resources\612i8Ub7rAL._SX425_.jpg" />
+    <Content Include="Resources\612i8Ub7rAL._SX425_1.jpg" />
+    <Content Include="Resources\Adcorp360_Checkout_RollerCoaster-1400x650.jpg" />
+    <Content Include="Resources\cave-johnson-supermarket-women-model-portal-2-video-games-wallpaper-preview.jpg" />
+    <Content Include="Resources\download %281%29.jpg" />
+    <Content Include="Resources\download %282%29.jpg" />
+    <Content Include="Resources\download %284%29.jpg" />
+    <Content Include="Resources\download %285%29.jpg" />
+    <Content Include="Resources\download %286%29.jpg" />
+    <Content Include="Resources\download %286%291.jpg" />
+    <Content Include="Resources\download %287%29.jpg" />
+    <Content Include="Resources\download.jpg" />
+    <Content Include="Resources\gettyimages-1024764308-612x612.jpg" />
+    <Content Include="Resources\images.jpg" />
+    <Content Include="Resources\photo-1539448185117-e8b970a2a739.jpg" />
+    <Content Include="Resources\shopify-expert-website-designer-cost-two.png" />
+    <Content Include="Resources\shopping-supermarket-merchandising-store.jpg" />
+    <Content Include="Resources\wall-wallpaper-concrete-colored-painted-textured-concept_53876-31799.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
