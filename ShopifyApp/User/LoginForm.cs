@@ -9,9 +9,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
-using ShopifyBLL.ShopifyBL;
+//using ShopifyBLL.ShopifyBL;
 using ShopifyDTO.DTO;
+using ShopifyApp.User;
+using ShopifyApp.Stock_Managment;
 
 namespace ShopifyApp
 {
@@ -22,66 +23,62 @@ namespace ShopifyApp
             InitializeComponent();
         }
 
+
+
+
         private void button1_Click(object sender, EventArgs e)
         {
-            string username;
-            string password;
-            username = txtUserId.Text;
-            password = txtPassword.Text;
-            DataTable dtLogin = null;
+            UserDTO userDTO = new UserDTO();
+            userDTO.UserId = txtUserId.Text;
+            userDTO.Password = txtPassword.Text;
+            userDTO.Type = cmbSelectUser.Text;
+
+            bool validUser = UserBL.UserLogin(userDTO);
             try
             {
-
-
-                dtLogin = UserBL.UserLogin(username, password);
-                if (dtLogin.Rows.Count > 0)
+                if (validUser)
                 {
-                    this.Hide();
-                    //userDetails login = new userDetails();
-                   // login.ShowDialog();
+                    if (userDTO.Type == "Admin")
+                    {
+                        this.Hide();
+                        AdminForm adminForm = new AdminForm();
+                        adminForm.Show();
+                    }
+                    else if (userDTO.Type == "Cashier")
+                    {
+                        this.Hide();
+                        CashierpageDemo cashierpageDemo = new CashierpageDemo();
+                        cashierpageDemo.Show();
+                    }
+                    else if (userDTO.Type == "Stock Manager")
+                    {
+                        this.Hide();
+                        StockManagerDemo stock_Manager = new StockManagerDemo();
+                        stock_Manager.Show();
+                    }
+
                 }
                 else
                 {
-                    // MessageBox.Show("Please Enter Vallid UserId and UserName");
-                    if (txtPassword.Text == string.Empty || txtUserId.Text == string.Empty)
-                    {
-
-
-                        foreach (Control control in this.Controls)
-                        {
-                            if (!Validate())
-                            {
-                                DialogResult = DialogResult.None;
-                                return;
-                            }
-                        }
-                    }
+                    lblMessaging.Text = "invalid credentials";
                 }
-
-
-
             }
-
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Please Enter Vallid UserId and UserName");
+                lblMessaging.Text = "Invalid Username or Passsword";
             }
-
-           
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            this.Hide();
-            RegistrationForm login = new RegistrationForm();
-            login.ShowDialog();
+            
 
-        }
+     
 
         private void button1_Click_2(object sender, EventArgs e)
         {
+
+        
             this.Hide();
-            Forgot_Password login = new Forgot_Password();
+            ChangePassword login = new ChangePassword();
             login.ShowDialog();
 
         }
@@ -107,6 +104,11 @@ namespace ShopifyApp
                 epUser.SetError(txtUserId, string.Empty);
 
             }
+        }
+
+        private void cmbSelectUser_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

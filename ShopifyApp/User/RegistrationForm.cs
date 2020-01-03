@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ShopifyBLL.ShopifyBL;
 using ShopifyDTO.DTO;
+using ShopifyApp.User;
+
+
 namespace ShopifyApp
 {
     public partial class RegistrationForm : Form
@@ -20,7 +23,7 @@ namespace ShopifyApp
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            UserDTO shopifyItems = null;
+            UserDTO userDTO = null;
             int output = 0;
             try
             {
@@ -39,24 +42,25 @@ namespace ShopifyApp
                 }
                 else
                 {
-                    shopifyItems = new UserDTO();
-                    shopifyItems.Name = txtRName.Text;
-
+                    userDTO = new UserDTO();
+                    userDTO.Name = txtRName.Text;
+                    userDTO.Type = cmbTypee.Text;
 
                     if (rbtnMale.Checked == true)
-                        shopifyItems.Gender = "Male";
+                        userDTO.Gender = "Male";
 
                     else
                     {
-                        shopifyItems.Gender = "female";
+                        userDTO.Gender = "female";
                     }
 
-                    shopifyItems.Dob = dtp.Value.ToShortDateString();
-                    shopifyItems.ContactNumber = txtRContactnumber.Text;
+                    
+                    userDTO.ContactNumber = txtRContactnumber.Text;
 
-                    shopifyItems.UserId = txtRUserid.Text;
-                    shopifyItems.Password = txtRPassword.Text;
-                    output = UserBL.InsertUser(shopifyItems);
+                    userDTO.UserId = txtRUserid.Text;
+                    userDTO.Password = txtRPassword.Text;
+
+                    output = UserBL.InsertUser(userDTO);
 
 
                     if (output > 0)
@@ -116,6 +120,77 @@ namespace ShopifyApp
             else
             {
                 ep.SetError(txtRContactnumber, string.Empty);
+            }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            LoadUserIDs();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdminForm adminForm = new AdminForm();
+            adminForm.ShowDialog();
+        }
+
+        private void btnDeleteUser_Click(object sender, EventArgs e)
+        {
+            int output = 0;
+            try
+            {
+                if (MessageBox.Show("DO YOU WANT TO DELETE ? ", "S I S",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    output = ShopifyItemsBLL.DeleteItem(cmbDeleteuser.Text);
+                }
+                if (output > 0)
+                {
+                    lblMessage.Text = " details deleted succesfully";
+                    //LoadContacts();
+                    LoadUserIDs();
+
+                }
+                else
+                {
+                    lblMessage.Text = "try again later";
+                }
+            }
+            catch (Exception e7)
+            {
+                lblMessage.Text = e7.Message.ToString();
+            }
+
+
+
+        }
+
+
+        private void LoadUserIDs()
+        {
+            DataSet dsStockID = null;
+            try
+            {
+                dsStockID = UserBL.GetUserID();
+                if (dsStockID != null)
+                {
+                    cmbDeleteuser.DataSource = dsStockID.Tables[0];
+
+
+                    cmbDeleteuser.ValueMember = "UserId";
+                    cmbDeleteuser.DisplayMember = "UserId";
+
+                }
+                else
+                {
+                    lblMessage.Text = "No students avialbale";
+                }
+            }
+            catch (Exception ex)
+            {
+                lblMessage.Text = ex.Message.ToString();
+
             }
         }
     }

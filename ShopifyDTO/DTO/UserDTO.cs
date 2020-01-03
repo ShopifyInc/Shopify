@@ -15,13 +15,43 @@ namespace ShopifyDTO.DTO
             get { return name; }
             set { name = value; }
         }
+
+        private string type;
+        public string Type
+        {
+            get { return type; }
+            set { type = value; }
+        }
+
+        private string newPassword;
+        public string NewPassword
+        {
+            get { return newPassword; }
+            set { newPassword = value; }
+        }
+
+        private string confirmNewPassword;
+        public string ConfirmNewPassword
+        {
+            get { return confirmNewPassword; }
+            set { confirmNewPassword = value; }
+        }
+
+
+        private string currentPassword;
+        public string CurrentPassword
+        {
+            get { return type; }
+            set { type = value; }
+        }
+
         private string dob;
 
-        public string Dob
-        {
-            get { return dob; }
-            set { dob = value; }
-        }
+        //public string Dob
+        //{
+        //    get { return dob; }
+        //    set { dob = value; }
+        //}
         private string gender;
 
         public string Gender

@@ -11,12 +11,12 @@ namespace ShopifyBLL.ShopifyBL
 {
    public class UserBL
     {
-        public static int InsertUser(UserDTO shopifyItems)
+        public static int InsertUser(UserDTO userDTO)
         {
             int output = 0;
             try
             {
-                output = UserDSL.InsertUser(shopifyItems);
+                output = UserDSL.InsertUser(userDTO);
             }
             catch
             {
@@ -25,18 +25,87 @@ namespace ShopifyBLL.ShopifyBL
             return output;
 
         }
-        public static DataTable UserLogin(string username, string password)
+
+       
+
+        public static bool UserLogin(UserDTO userDTO)
         {
-            DataTable dtLogin = null;
+            Boolean flag = false;
+            DataSet dsUser = null;
+
+            dsUser= UserDSL.UserLogin(userDTO);
+
+            Object[] Data = null;
+
+            if (dsUser.Tables[0].Rows.Count > 0)
+            {
+                Data = dsUser.Tables[0].Rows[0].ItemArray;
+
+                string userid = Data[0].ToString();
+                string password = Data[1].ToString();
+
+                if (userDTO.UserId == userid && userDTO.Password == password)
+                {
+                    flag = true;
+                }
+                else
+                {
+                    flag = false;
+                }
+            }
+            return flag;
+        }
+
+
+        public static int DeleteItem(string id)
+        {
+            int output = 0;
+
             try
             {
-                dtLogin = UserDSL.UserLogin(username, password);
+                output = UserDSL.DeleteItem(id);
+
+
+
             }
-            catch (Exception ex)
+            catch (Exception e3)
             {
-                Console.Out.WriteLine("***Error :ShopifyBLL.UserLogin()", ex.Message.ToString());
+                Console.Out.WriteLine(" inside catch-ERROR : ShopifyItemsBLL.cs :DeleteItem()" + e3.Message.ToString());
+
+
             }
-            return dtLogin;
+
+            return output;
         }
+
+
+
+
+
+        //loaduserid
+
+        public static DataSet GetUserID()
+        {
+            //String sql = "";
+
+            DataSet dsStockID = null;
+
+            try
+            {
+
+                dsStockID = UserDSL.GetUserID();
+
+
+            }
+            catch (Exception e3)
+            {
+                Console.Out.WriteLine(" inside catch-ERROR : ShopifyItemsBLL.cs :GetContactIDs" + e3.Message.ToString());
+
+
+            }
+
+            return dsStockID;
+        }
+
     }
 }

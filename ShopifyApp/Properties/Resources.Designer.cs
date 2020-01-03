@@ -63,6 +63,26 @@ namespace ShopifyApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Banding_example1 {
+            get {
+                object obj = ResourceManager.GetObject("Banding-example1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Banding_example11 {
+            get {
+                object obj = ResourceManager.GetObject("Banding-example11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cave_johnson_supermarket_women_model_portal_2_video_games_wallpaper_preview {
             get {
                 object obj = ResourceManager.GetObject("cave-johnson-supermarket-women-model-portal-2-video-games-wallpaper-preview", resourceCulture);
@@ -93,6 +113,16 @@ namespace ShopifyApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap maxresdefault {
+            get {
+                object obj = ResourceManager.GetObject("maxresdefault", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap maxresdefault1 {
             get {
                 object obj = ResourceManager.GetObject("maxresdefault1", resourceCulture);
@@ -106,6 +136,16 @@ namespace ShopifyApp.Properties {
         internal static System.Drawing.Bitmap platform_shopify {
             get {
                 object obj = ResourceManager.GetObject("platform-shopify", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap river_stone_texture {
+            get {
+                object obj = ResourceManager.GetObject("river-stone-texture", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
