@@ -17,7 +17,8 @@ namespace ShopifyApp
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //  Application.Run(new Stock_Managment.Stock_Manager());
-            Application.Run(new Cashier.CashierMenu());
+            //  Application.Run(new Cashier.CashierMenu());
+            Application.Run(new WelcomeForm());
         }
     }
 }

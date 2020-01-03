@@ -325,7 +325,7 @@ namespace ShopifyDSL.DL
             try
             {
                 //sql = " delete from PocketMoney where =Sr_no" + id + "'";
-                sql = " delete from StockDetails where ProductID='" + id + "'";
+                sql = " delete from UserDetails where UserId='" + id + "'";
                 ////////////
                 con = DBHelper.GetConnection();
                 con.Open();
