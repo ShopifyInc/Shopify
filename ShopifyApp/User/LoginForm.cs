@@ -53,6 +53,7 @@ namespace ShopifyApp
                     else if (userDTO.Type == "Stock Manager")
                     {
                         this.Hide();
+                        ///
                         StockManagerDemo stock_Manager = new StockManagerDemo();
                         stock_Manager.Show();
                     }
